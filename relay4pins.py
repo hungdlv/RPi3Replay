@@ -18,15 +18,20 @@ try:
     GPIO.output(32,GPIO.LOW)
     print("First Relay ON")
     time.sleep(2)
-
     GPIO.output(36,GPIO.LOW)
     print("Second Relay ON")
     time.sleep(2)
-
     GPIO.output(38,GPIO.LOW)
     print("Third Relay ON")
     time.sleep(2)
-
     GPIO.output(40,GPIO.LOW)
     print("Fourth Relay ON")
     time.sleep(5)
+    GPIO.cleanup()
+    print("ALL OFF ... GOOD BYE !!!")
+
+except KeyboardInterrupt:
+    print("QUIT")
+    GPIO.cleanup()
+
+
