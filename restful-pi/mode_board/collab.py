@@ -12,7 +12,7 @@ PINS = urljoin(HOST, PIN_ENDPOINT)
 def toggle_color(color: str, state: str):
     for pin in requests.get(PINS).json():
         if pin['color'] == color:
-            requests.patch(urljoin(PINS, str(pin)),
+            requests.patch(urljoin(PINS, str(pin['id'])),
                            json={"state": state})
 
 
